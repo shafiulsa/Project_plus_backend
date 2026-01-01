@@ -9,7 +9,7 @@ const { getUsers, getUserById } = require("../controllers/userController");
 router.get("/", getUsers);
 
 // GET single user by ID
-router.get("/:id", verifyToken, authorizeRoles(["admin"]), getUserById);
+router.get("/:id", verifyToken, authorizeRoles("admin"), getUserById);
 
 
 module.exports = router;
