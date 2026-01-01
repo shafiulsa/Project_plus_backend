@@ -12,7 +12,8 @@ const {
   addComment
 } = require("../controllers/projectController");
 
-router.get("/", verifyToken, getProjects);
+// router.get("/", verifyToken, getProjects);
+router.get("/",  getProjects);
 router.get("/:id", verifyToken, getProjectById);
 router.post("/", verifyToken, authorizeRoles("admin"), createProject);
 router.put("/:id", verifyToken, authorizeRoles("admin"), updateProject);
