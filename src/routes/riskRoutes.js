@@ -8,6 +8,6 @@ const { getRisks, createRisk, updateRisk } = require("../controllers/riskControl
 // router.get("/", verifyToken, authorizeRoles(["admin", "employee"]), getRisks);
 router.get("/",  getRisks);
 router.post("/", verifyToken, authorizeRoles("employee"), createRisk);
-router.put("/:id", verifyToken, authorizeRoles(["admin", "employee"]), updateRisk);
+router.put("/:id", verifyToken, authorizeRoles("admin", "employee"), updateRisk);
 
 module.exports = router;
